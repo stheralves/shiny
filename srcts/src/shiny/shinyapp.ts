@@ -198,7 +198,7 @@ class ShinyApp {
         defaultPath += "websocket/";
 
         const ws: ShinyWebSocket = new WebSocket(
-          protocol + "//" + window.location.host ":8000" + defaultPath
+          protocol + "//" + window.location.host + ":8000" + defaultPath
         );
 
         ws.binaryType = "arraybuffer";
