@@ -23,9 +23,9 @@ import { resetBrush } from "../imageutils/resetBrush";
 import type { OutputBindingAdapter } from "../bindings/outputAdapter";
 import type {
   ShinyEventError,
-  ShinyEventMessage,
-  ShinyEventValue,
-  ShinyEventUpdateInput,
+    ShinyEventMessage,
+    ShinyEventValue,
+    ShinyEventUpdateInput,
 } from "../events/shinyEvents";
 import type { InputBinding } from "../bindings";
 import { indirectEval } from "../utils/eval";
@@ -198,7 +198,7 @@ class ShinyApp {
         defaultPath += "websocket/";
 
         const ws: ShinyWebSocket = new WebSocket(
-          protocol + "//" + window.location.host + defaultPath
+          protocol + "//" + window.location.host ":8000" + defaultPath
         );
 
         ws.binaryType = "arraybuffer";
@@ -859,8 +859,8 @@ class ShinyApp {
           // and <head> still occur
           console.warn(
             'The selector you chose ("' +
-              message.selector +
-              '") could not be found in the DOM.'
+            message.selector +
+            '") could not be found in the DOM.'
           );
           renderHtml(message.content.html, $([]).get(0), message.content.deps);
         } else {
@@ -1136,8 +1136,8 @@ class ShinyApp {
             // or append an item inside a navbarMenu (dropdown)
             const $dropdownATag = $(
               "a.dropdown-toggle[data-value='" +
-                $escape(message.menuName) +
-                "']"
+              $escape(message.menuName) +
+              "']"
             );
 
             if ($dropdownATag.length === 0) {
@@ -1381,12 +1381,12 @@ class ShinyApp {
         // The 'bar' class is needed for backward compatibility with Bootstrap 2.
         const $progress = $(
           '<div class="shiny-progress open">' +
-            '<div class="progress active"><div class="progress-bar bar"></div></div>' +
-            '<div class="progress-text">' +
-            '<span class="progress-message">message</span>' +
-            '<span class="progress-detail"></span>' +
-            "</div>" +
-            "</div>"
+          '<div class="progress active"><div class="progress-bar bar"></div></div>' +
+          '<div class="progress-text">' +
+          '<span class="progress-message">message</span>' +
+          '<span class="progress-detail"></span>' +
+          "</div>" +
+          "</div>"
         );
 
         $progress.attr("id", message.id);
