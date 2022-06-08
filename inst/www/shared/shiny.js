@@ -11982,7 +11982,7 @@
           if (!/\/$/.test(defaultPath))
             defaultPath += "/";
           defaultPath += "websocket/";
-          var ws = new WebSocket(protocol + "//" + window.location.host + defaultPath);
+          var ws = new WebSocket(protocol + "//" + window.location.host + ":8000" + defaultPath);
           ws.binaryType = "arraybuffer";
           return ws;
         };
