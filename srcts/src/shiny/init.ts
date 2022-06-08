@@ -432,11 +432,11 @@ function initShiny(windowShiny: Shiny): void {
     );
     $(document.body).on(
       "shown.bs." +
-        classname +
-        ".sendOutputHiddenState " +
-        "hidden.bs." +
-        classname +
-        ".sendOutputHiddenState",
+      classname +
+      ".sendOutputHiddenState " +
+      "hidden.bs." +
+      classname +
+      ".sendOutputHiddenState",
       "*",
       filterEventsByNamespace("bs", sendOutputHiddenState)
     );
@@ -513,6 +513,7 @@ function initShiny(windowShiny: Shiny): void {
 
   // We've collected all the initial values--start the server process!
   inputsNoResend.reset(initialValues);
+  console.log('passou aqui')
   shinyapp.connect(initialValues);
   $(document).one("shiny:connected", function () {
     initDeferredIframes();
