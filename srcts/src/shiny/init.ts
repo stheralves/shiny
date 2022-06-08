@@ -29,6 +29,8 @@ import type { InputPolicyOpts } from "../inputPolicies/inputPolicy";
 
 // "init_shiny.js"
 function initShiny(windowShiny: Shiny): void {
+
+  console.log('entrou initShiny')
   setShinyObj(windowShiny);
   const shinyapp = (windowShiny.shinyapp = new ShinyApp());
 

@@ -10,10 +10,10 @@ import { renderContent, renderDependencies, renderHtml } from "./render";
 import { initShiny } from "./init";
 import type {
   shinyBindAll,
-  shinyForgetLastInputValue,
-  shinySetInputValue,
-  shinyInitializeInputs,
-  shinyUnbindAll,
+    shinyForgetLastInputValue,
+    shinySetInputValue,
+    shinyInitializeInputs,
+    shinyUnbindAll,
 } from "./initedMethods";
 import { setFileInputBinding } from "./initedMethods";
 import type { Handler, ShinyApp } from "./shinyapp";
@@ -95,8 +95,10 @@ function setShiny(windowShiny_: Shiny): void {
   windowShiny.renderHtml = renderHtml;
 
   $(function () {
+
     // Init Shiny a little later than document ready, so user code can
     // run first (i.e. to register bindings)
+    console.log('entrou init')
     setTimeout(function () {
       initShiny(windowShiny);
     }, 1);
